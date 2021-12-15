@@ -52,9 +52,11 @@ sudo  vncserver -localhost  -depth 24 -geometry 1360x768 :1
 /root/install/tun_setup.sh
 echo "deaomndd"
 
+systemctl enable supervisor.service
 systemctl enable vncserver@1.service
 systemctl daemon-reload
 systemctl start vncserver@1
+systemctl start supervisor
 # git -C root/moya/ pull
 cd /root/SDA_ALL/
 # cd /root/SDA_ALL/48_firefox/
